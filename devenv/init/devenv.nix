@@ -2,38 +2,47 @@
 
 {
   # https://devenv.sh/basics/
-  env.GREET = "devenv";
+  env = {
+    PROJ = "#PROJ_NAME";
+    #ENVVAR_LIST
+    };
 
   # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
+  packages = [ 
+    pkgs.git
+    #PACKAGE_LIST
+    ];
 
   # https://devenv.sh/languages/
-  # languages.rust.enable = true;
+  #LANGUAGES_INIT
 
   # https://devenv.sh/processes/
-  # processes.cargo-watch.exec = "cargo-watch";
+  #PROCESSES_INIT
 
   # https://devenv.sh/services/
-  # services.postgres.enable = true;
+  #SERVICES_INIT
 
   # https://devenv.sh/scripts/
-  scripts.hello.exec = ''
-    echo hello from $GREET
-  '';
+  scripts = {
+    hello.exec = ''echo Starting project environment for $PROJ...'';
+    #SCRIPTS_LIST
+    };
 
   enterShell = ''
     hello
-    git --version
+    #ENTER_SHELL_SCRIPT
   '';
 
   # https://devenv.sh/tests/
   enterTest = ''
     echo "Running tests"
     git --version | grep --color=auto "${pkgs.git.version}"
+    #ENTER_TEST_SCRIPT
   '';
 
   # https://devenv.sh/pre-commit-hooks/
   # pre-commit.hooks.shellcheck.enable = true;
+  #PRE_COMMIT_HOOKS_INIT
 
   # See full reference at https://devenv.sh/reference/options/
 }
