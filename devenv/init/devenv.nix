@@ -14,13 +14,13 @@
     ];
 
   # https://devenv.sh/languages/
-  #LANGUAGES_INIT
+    #LANGUAGES_INIT
 
   # https://devenv.sh/processes/
-  #PROCESSES_INIT
+    #PROCESSES_INIT
 
   # https://devenv.sh/services/
-  #SERVICES_INIT
+    #SERVICES_INIT
 
   # https://devenv.sh/scripts/
   scripts = {
@@ -42,7 +42,7 @@
 
   # https://devenv.sh/pre-commit-hooks/
   # pre-commit.hooks.shellcheck.enable = true;
-  #PRE_COMMIT_HOOKS_INIT
+    #PRE_COMMIT_HOOKS_INIT
 
   # See full reference at https://devenv.sh/reference/options/
 }
